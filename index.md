@@ -190,14 +190,7 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong>
-  {% if online == "false" %}
-    Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% else %}
-    Participants must have access to a computer with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+    Participants will be working on desktops in the MEC Computing Lab 1. Please check that you can access the University of Edinburgh Noteable service at https://noteable.edina.ac.uk/ with your EASE credentials. If you encounter issues, contact alison.meynert@ed.ac.uk.
 </p>
 
 {% comment %}
