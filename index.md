@@ -4,7 +4,7 @@ layout: workshop      # DON'T CHANGE THIS.
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
 venue: "MRC Human Genetics Unit, University of Edinburgh"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "Medical Education Centre Computing Lab 1, Western General Hospital, Crewe Road South, Edinburgh, Edinburgh, EH4 2XU"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online', or full street address ending 'and online'.
+address: "Medical Education Centre Computing Lab 1, Western General Hospital, Crewe Road South, Edinburgh, Edinburgh, EH4 2XU and online"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online', or full street address ending 'and online'.
 country: "GB"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: "55.962514"        # decimal latitude of workshop venue (use https://www.latlong.net/)
@@ -190,7 +190,9 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong>
-    Participants will be working on desktops in the MEC Computing Lab 1. Please check that you can access the University of Edinburgh Noteable service at https://noteable.edina.ac.uk/login with your EASE credentials. If you encounter issues, contact alison.meynert@ed.ac.uk.
+    Participants will be working on desktops in the MEC Computing Lab 1.
+    Please check that you can access the <a href="https://noteable.edina.ac.uk/login">University of Edinburgh Noteable service</a> with your EASE credentials.
+    If you encounter issues, contact <a href="mailto:alison.meynert@ed.ac.uk">alison.meynert@ed.ac.uk</a>.
 </p>
 
 {% comment %}
@@ -406,7 +408,7 @@ please preview your site before committing, and make sure to run
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in a
+  To participate in this
   {% if site.carpentry == "swc" %}
   Software Carpentry
   {% elsif site.carpentry == "dc" %}
@@ -418,11 +420,25 @@ please preview your site before committing, and make sure to run
   you will need access to software as described below.
   In addition, you will need an up-to-date web browser.
 </p>
+{% comment %}
 <p>
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
+{% endcomment %}
+
+{% if site.carpentry == "swc" %}
+{% include swc/setup.html %}
+{% elsif site.carpentry == "dc" %}
+{% include dc/setup.html %}
+{% elsif site.carpentry == "lc" %}
+{% include lc/setup.html %}
+{% elsif site.carpentry == "incubator" %}
+Please check the "Setup" page of
+[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
+to obtain the software and data you will need to follow the lesson.
+{% endif %}
 
 {% comment %}
 For online workshops, the section below provides:
@@ -442,16 +458,4 @@ to include the relevant installation instrucctions.
 These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
-
-{% if site.carpentry == "swc" %}
-{% include swc/setup.html %}
-{% elsif site.carpentry == "dc" %}
-{% include dc/setup.html %}
-{% elsif site.carpentry == "lc" %}
-{% include lc/setup.html %}
-{% elsif site.carpentry == "incubator" %}
-Please check the "Setup" page of
-[the lesson site]({{ site.incubator_lesson_site }}) for instructions to follow
-to obtain the software and data you will need to follow the lesson.
-{% endif %}
 
