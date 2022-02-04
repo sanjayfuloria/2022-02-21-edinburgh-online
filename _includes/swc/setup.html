@@ -4,9 +4,69 @@
 {% endunless %}
 
 {% include install_instructions/downloads.html %}
-{% include install_instructions/shell.html %}
-{% include install_instructions/git.html %}
-{% include install_instructions/editor.html %}
+
+<div id="instructions">
+  <h3>Noteable service</h3>
+  <p>
+    For this workshop, we will be using the University of Edinburgh Noteable service.
+    To prepare, please make sure you can log in with your EASE credentials
+    and set up new notebooks as described below.
+  </p>
+  <ol>
+    <li>
+      In your browser, go to the
+      <a href="https://noteable.edina.ac.uk/login">University of Edinburgh Noteable</a>
+      login page and use your EASE credentials to access the site.
+    </li>
+    <li>
+      When prompted to select a personal notebook server, choose
+      &lsquo;Standard Notebook (Python 3)&rsquo; and select &lsquo;Start&rsquo;.
+    </li>
+    <li>
+      <img alt="Screenshot of Noteable root folder, with the &lsquo;New&rsquo; button selected and the options &lsquo;Python 3&rsquo;, &lsquo;Text File&rsquo;, &lsquo;Folder&rsquo;, and &lsquo;Terminal&rsquo; showing."
+        src="./assets/img/noteable-new.png"/><br/>
+      You should see a Jupyter Notebook screen. Select the &lsquo;New&rsquo; dropdown menu at the top right and choose &lsquo;Folder&rsquo;.
+    </li>
+    <li>
+      The directory listing will show &lsquo;Untitled Folder&rsquo;.
+      Tick the box to the left of it. A &lsquo;Rename&rsquo; button will appear above the listing; select it.
+    </li>
+    <li>
+      <img alt="Screenshot of Noteable, showing the &lsquo;Rename directory&rsquo; dialogue box."
+        src="./assets/img/noteable-folder.png"/><br/>
+      A dialogue box appears, asking you to enter a new directory name.
+      Type &lsquo;Desktop&rsquo; and select &lsquo;Rename&rsquo;.
+    </li>
+    <li>
+      Select the &lsquo;Desktop&rsquo; folder to enter it.
+    </li>
+    <li>
+      Using the &lsquo;Upload&rsquo; button on the top right,
+      upload your downloaded copies of shell-lesson-data.zip and python-novice-gapminder-data.zip.
+      You will need to select another &lsquo;Upload&rsquo; button in the directory listing each time.
+    </li>
+    <li>
+      Select the &lsquo;New&rsquo; dropdown menu at the top right and choose &lsquo;Terminal&rsquo;.
+    </li>
+    <li>
+      <p>In the new tab that opens, you should see a black Terminal window.
+      Enter the following text, one line at a time.</p>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight">
+      <code>cd Desktop</code>
+      <code>unzip shell-lesson-data.zip</code>
+      <code>mkdir python-lesson</code>
+      <code>unzip python-novice-gapminder-data.zip -d python-lesson</code>
+      <code>exit</code>
+      </pre>
+      </div></div>
+    </li>
+    <li>
+      You can now close the Terminal tab.
+      In your original tab, you should see your new <strong>shell-lesson-data</strong> and <strong>python-lesson</strong> folders.
+      You can select and delete the zip files if you like, by ticking the boxes next to them and selecting the red dustbin icon above.
+    </li>
+  </ol>
+</div>
 
 {% if site.flavor == "r" %}
 {% include install_instructions/r.html %}
